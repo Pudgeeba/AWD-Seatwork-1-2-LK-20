@@ -6,21 +6,21 @@
 <div align="center">
   <a href="https://github.com/zyx-0314/">
   <!-- TODO: If you want to add logo or banner you can add it here -->
-    <img src="./assets/img/nyebe_white.png" alt="Nyebe" width="130" height="100">
+    <img src="./assets/img/kln-kreates-logo-1.png" alt="=klnKreatesLogo" width="130" height="100">
   </a>
 <!-- TODO: Change Title to the name of the title of your Project -->
-  <h3 align="center">Title</h3>
+  <h3 align="center">Seatwork 1</h3>
 </div>
 <!-- TODO: Make a short description -->
 <div align="center">
-  Short Description. (Optional)
+ This is an individual project that is a focused on systems that uses HTML and Javascript. The problem set that was assigned to me is problem set number 2, which is the Car Rental System.
 </div>
 
 <br />
 
 <!-- TODO: Change the zyx-0314 into your github username  -->
 <!-- TODO: Change the WD-Template-Project into the same name of your folder -->
-![](https://visit-counter.vercel.app/counter.png?page=zyx-0314/WD-Template-Project)
+![](https://visit-counter.vercel.app/counter.png?page=Pudgeeba/AWD-Seatwork-1-2-LK-20)
 
 ---
 
@@ -57,7 +57,7 @@
 
 <!-- TODO: To be changed -->
 <!-- The following are just sample -->
-Description of the project in details.
+The Website I have created is a Car Rental System, it basically gets users to rent a car online. The key components are Multipage website, Transactional, and Parallax transition. I used HTML for the code structure, Javascript for the functionalities, and CSS for the design itself. On the homepage, we have a hero page with a rent a car button below to get the users started with the car rental. below this section is the steps to take for renting a car. and below this section ia 3 featured cars with buttons to view thje car details and a view all cars button below to see the rest of the available offered cars. On the Book Cars page is where the user will input rentail details such as the date and time for pick-up and drop-off, we also has the filter panel on the left side for the users to better find their dessired cars. and on the right is the rest of the cars where they can check to see if the car is available for rent or not. When the car is available, it is eligible for payment. The user can now pick if they will pay full online or give a 50% down payment and pay cash in person to assure the admin that the user will proceed on getting the car. Once payment is settled, a receipt will pop up on their screen and now the user has already rented a car and is available for pick-up on their desired date and time.
 
 Guiding Question:
 - What is the project
@@ -117,4 +117,8 @@ WD-ProjectName
 <!-- TODO: Add References -->
 | Title | Purpose | Link |
 |-|-|-|
-| Sample Title | Sample purpose would be here like this and this is the example of what it is. | trykolang.com |
+| Chatgpt | For guide in revising the html code | https://chatgpt.com/ |
+| Youtube | For guide in javascript and css  | https://www.youtube.com/ |
+| Canva | For guide images and elements | https://www.canva.com/ |
+| W3schools | For css and html guide | https://www.w3schools.com/ |
+| Stack Overflow | For guide in revising the code | https://stackoverflow.com/ |
