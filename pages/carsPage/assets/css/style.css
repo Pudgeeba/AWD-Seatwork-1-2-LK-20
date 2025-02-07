@@ -142,6 +142,18 @@ body {
 .car-card button:hover {
     background-color: #a80453;
 }
+/* Selected Button Style */
+.car-card .selected-button {
+    background-color: grey; /* Change to your desired grey color */
+    color: white; /* Change text color to white for better contrast */
+    cursor: not-allowed; /* Change cursor to indicate it's not clickable */
+}
+
+.car-card .selected-button:hover {
+    background-color: grey; /* Change to your desired grey color */
+    color: white; /* Change text color to white for better contrast */
+    cursor: not-allowed; /* Change cursor to indicate it's not clickable */
+}
 
 /* Pagination */
 .pagination {
@@ -451,7 +463,11 @@ footer span {
     }
 }
 
-
+/* Rental Status Styles */
+.rental-status {
+    font-weight: bold;
+    margin: 10px 0;
+}
 
 /* Modal Styles */
 .modal {
@@ -491,3 +507,4 @@ footer span {
     text-decoration: none;
     cursor: pointer;
 }
+

@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Rental Service</title>
-     <!--Icon Library-->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <script src="https://kit.fontawesome.com/b93004a0bd.js"></script>
+    <!--Icon Library-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b93004a0bd.js"></script>
 
-     <!-- Font -->
-     <link rel="preconnect" href="https://fonts.googleapis.com" />
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-       rel="stylesheet"/>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
 
     <!-- CDNJS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
 </head>
 <body>
     <!-- Hero Section -->
@@ -42,10 +39,25 @@
             </div>
         </section>
 
-        <!-- Date and Time Selection -->
+        <!-- Rental Details Section -->
         <section class="rental-details">
             <h2>Book Your Rental Car</h2>
             <form>
+                <!-- User Information Fields -->
+                <div class="form-group">
+                    <label for="user-name">Name:</label>
+                    <input type="text" id="user-name" name="user-name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-phone">Phone Number:</label>
+                    <input type="tel" id="user-phone" name="user-phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-email">Email:</label>
+                    <input type="email" id="user-email" name="user-email" placeholder="Enter your email" required>
+                </div>
+
+                <!-- Date and Time Selection -->
                 <div class="form-group">
                     <label for="pickup-date">Pick-up Date & Time:</label>
                     <input type="datetime-local" id="pickup-date" name="pickup-date" required>
@@ -66,13 +78,13 @@
                     <input type="text" id="dropoff-location" name="dropoff-location" placeholder="Enter location" required>
                 </div>
 
-                <button type="submit">Search Cars</button>
+                <button type="button" id="rentCarButton" disabled>Rent Car</button>
             </form>
         </section>
 
         <!-- Filtering Panel and Car List Container -->
         <div class="container">
-            <aside class="filter-panel sticky-filter"> <!-- Added sticky-filter class here -->
+            <aside class="filter-panel sticky-filter">
                 <h3>Filter Cars</h3>
                 <div class="filter-group">
                     <label>Brand:</label>
@@ -109,104 +121,116 @@
                 <button id="filterBtn">Apply</button>
             </aside>
 
-          <!-- Car List Section -->
+           <!-- Car List Section -->
 <section class="car-list">
     <!-- 2-Person Cars (Sports Cars) -->
-    <div class="car-card" data-brand="Chevrolet" data-seats="2" data-transmission="Automatic">
+    <div class="car-card" data-brand="Chevrolet" data-seats="2" data-transmission="Automatic" data-status="available">
         <img src="./assets/img/chevroletCorvette.png" alt="Chevrolet Corvette">
         <h2>Chevrolet Corvette</h2>
         <p>⚙️ Automatic 👥 2 Persons</p>
-        <p>Rs. 600/hr</p>
-        <button class="view-car-btn">View Car</button>
+        <p>₱ 600/hr</p>
+        <p class="rental-status">Status: Available</p>
+        <button class="select-car-btn">Select</button>
     </div>
-    <div class="car-card" data-brand="Porsche" data-seats="2" data-transmission="Automatic">
+    <div class="car-card" data-brand="Porsche" data-seats="2" data-transmission="Automatic" data-status="available">
         <img src="./assets/img/porsche911.png" alt="Porsche 911">
         <h2>Porsche 911</h2>
         <p>⚙️ Automatic 👥 2 Persons</p>
-        <p>Rs. 800/hr</p>
-        <button class="view-car-btn">View Car</button>
+        <p>₱ 800/hr</p>
+        <p class="rental-status">Status: Available</p>
+        <button class="select-car-btn">Select</button>
     </div>
 
     <!-- 4-Person Cars (Sedans & Coupes) -->
-    <div class="car-card" data-brand="BMW" data-seats="4" data-transmission="Automatic">
+    <div class="car-card" data-brand="BMW" data-seats="4" data-transmission="Automatic" data-status="available">
         <img src="./assets/img/BMWM4.png" alt="BMW M4">
         <h2>BMW M4</h2>
         <p>⚙️ Automatic 👥 4 Persons</p>
-        <p>Rs. 500/hr</p>
-        <button class="view-car-btn">View Car</button>
+        <p>₱ 500/hr</p>
+        <p class="rental-status">Status: Available</p>
+        <button class="select-car-btn">Select</button>
     </div>
-    <div class="car-card" data-brand="Audi" data-seats="4" data-transmission="Automatic">
+    <div class="car-card" data-brand="Audi" data-seats="4" data-transmission="Automatic" data-status="available">
         <img src="./assets/img/audiCoupe.png" alt="Audi A5 Coupe">
         <h2>Audi A5 Coupe</h2>
         <p>⚙️ Automatic 👥 4 Persons</p>
-        <p>Rs. 550/hr</p>
-        <button class="view-car-btn">View Car</button>
+        <p>₱ 550/hr</p>
+        <p class="rental-status">Status: Available</p>
+        <button class="select-car-btn">Select</button>
     </div>
 
     <!-- 5-Person Cars (Compact SUVs & Sedans) -->
-    <div class="car-card" data-brand="Toyota" data-seats="5" data-transmission="Automatic">
+    <div class="car-card" data-brand="Toyota" data-seats="5" data-transmission="Automatic" data-status="available">
         <img src="./assets/img/toyotaCorolla.png" alt="Toyota Corolla">
         <h2>Toyota Corolla</h2>
         <p>⚙️ Automatic 👥 5 Persons</p>
-        <p>Rs. 320/hr</p>
-        <button class="view-car-btn">View Car</button>
+        <p>₱ 320/hr</p>
+        <p class="rental-status">Status: Available</p>
+        <button class="select-car-btn">Select</button>
     </div>
-    <div class="car-card" data-brand="Honda" data-seats="5" data-transmission="Automatic">
+    <div class="car-card" data-brand="Honda" data-seats="5" data-transmission="Automatic" data-status="available">
         <img src="./assets/img/hondaCivic.png" alt="Honda Civic">
         <h2>Honda Civic</h2>
         <p>⚙️ Automatic 👥 5 Persons</p>
-        <p>Rs. 350/hr</p>
-        <button class="view-car-btn">View Car</button>
+        <p>₱ 350/hr</p>
+        <p class="rental-status">Status: Available</p>
+        <button class="select-car-btn">Select</button>
     </div>
 
     <!-- 7-Person Cars (Midsize SUVs & MPVs) -->
-    <div class="car-card" data-brand="Toyota" data-seats="7" data-transmission="Automatic">
+    <div class="car-card" data-brand="Toyota" data-seats="7" data-transmission="Automatic" data-status="available">
         <img src="./assets/img/toyotaFortuner.png" alt="Toyota Fortuner">
         <h2>Toyota Fortuner</h2>
         <p>⚙️ Automatic 👥 7 Persons</p>
-        <p>Rs. 450/hr</p>
-        <button class="view-car-btn">View Car</button>
+        <p>₱ 450/hr</p>
+        <p class="rental-status">Status: Available</p>
+        <button class="select-car-btn">Select</button>
     </div>
-    <div class="car-card" data-brand="Ford" data-seats="7" data-transmission="Automatic">
+    <div class="car-card" data-brand="Ford" data-seats="7" data-transmission="Automatic" data-status="available">
         <img src="./assets/img/fordExplorer.png" alt="Ford Explorer">
         <h2>Ford Explorer</h2>
         <p>⚙️ Automatic 👥 7 Persons</p>
-        <p>Rs. 480/hr</p>
-        <button class="view-car-btn">View Car</button>
+        <p>₱ 480/hr</p>
+        <p class="rental-status">Status: Available</p>
+        <button class="select-car-btn">Select</button>
     </div>
 
     <!-- 8-Person Cars (Large SUVs & Vans) -->
-    <div class="car-card" data-brand="Chevrolet" data-seats="8" data-transmission="Automatic">
+    <div class="car-card" data-brand="Chevrolet" data-seats="8" data-transmission="Automatic" data-status="available">
         <img src="./assets/img/chevroletSuburban.png" alt="Chevrolet Suburban">
         <h2>Chevrolet Suburban</h2>
         <p>⚙️ Automatic 👥 8 Persons</p>
-        <p>Rs. 500/hr</p>
-        <button class="view-car-btn">View Car</button>
+        <p>₱ 500/hr</p>
+        <p class="rental-status">Status: Available</p>
+        <button class="select-car-btn">Select</button>
     </div>
-    <div class="car-card" data-brand="Toyota" data-seats="8" data-transmission="Automatic">
+    <div class="car-card" data-brand="Toyota" data-seats="8" data-transmission="Automatic" data-status="available">
         <img src="./assets/img/toyotaSienna.png" alt="Toyota Sienna">
         <h2>Toyota Sienna</h2>
         <p>⚙️ Automatic 👥 8 Persons</p>
-        <p>Rs. 550/hr</p>
-        <button class="view-car-btn">View Car</button>
+        <p>₱ 550/hr</p>
+        <p class="rental-status">Status: Available</p>
+        <button class="select-car-btn">Select</button>
     </div>
 </section>
 
-<!-- Popup Overlay for Car Details -->
-<div id="popupOverlay" style="display: none;">
-    <div id="popupContent">
-        <!-- Popup content will be dynamically filled by JavaScript -->
-    </div>
-</div>
-
-       
+        <!-- Modal for Car Details -->
+        <div class="modal" id="carModal" style="display: none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalCarName"></h2>
+                <img id="modalCarImage" src="" alt="" style="width: 100%; height: auto;">
+                <p id="modalCarDetails"></p>
+                <button id="rentCarBtn" style="background-color: green;">Rent Car</button>
+            </div>
+        </div>
     </main>
-     <!-- External JavaScript -->
-     <script src="./assets/js/scripts.js"></script>
-     <footer>
+
+    <!-- External JavaScript -->
+    <script src="./assets/js/scripts.js"></script>
+    <footer>
         <div class="footer-container">
             <div class="footer-section">
-                    
                 <h2>CAR RENTAL <span>SERVICES</span> </h2>
                 <p>We are a rental service provider</p>
             </div>
@@ -235,15 +259,5 @@
             </div>
         </div>
     </footer>
-
-    <div class="modal" id="carModal" style="display: none;">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modalCarName"></h2>
-            <img id="modalCarImage" src="" alt="" style="width: 100%; height: auto;">
-            <p id="modalCarDetails"></p>
-            <button id="rentCarBtn" style="background-color: green;">Rent Car</button>
-        </div>
-    </div>
 </body>
 </html>
