@@ -1,0 +1,425 @@
+/* styles.css */
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.navigationBar {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    padding: 0.5rem 9vw;
+    align-items: center;
+    background: linear-gradient(180deg, #ffb4c1, #ffdbec 1000%);
+    position: fixed;
+    top: 0;
+    z-index: 10; 
+    height: 80px;
+    box-shadow: 0 4px 6px #cd7a99;
+  }
+    .navigationBar .navigation {
+      display: flex;
+      align-items: center;
+      gap: -2rem;
+  }
+  
+  .navigationBar .navigation-content {
+      color: #ffffff;
+      font-size: 20px;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 5px;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      display: inline-block;
+      transition: all 0.5s;
+  }
+  
+  .navigationBar .navigation-content-active{
+      color: #e9497e;
+      font-size: 20px;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 5px;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      display: inline-block;
+      transition: all 0.5s;
+  }
+  
+  .navigationBar .button {
+      border: 1px rgb(0, 0, 0) solid;
+      font-size: 0.9rem;
+      color: rgb(255, 255, 255);
+      background-color: rgb(45, 44, 44);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+  }
+  
+  .navigationBar .navigation-content:hover {
+      color: #e9497e;
+      text-shadow: 0 0 9px #ffffff, 0 0 9px #ffffff, 0 0 9px #ffffff, 0 0 9px #ffffff;
+  }
+  
+  .navigationBar .button:hover {
+      color: #000000;
+      background-color: #ffffff;
+      border: none;
+  }
+  
+  .navigationBar .logo {
+      display: flex;
+      align-items: center;
+  }
+    
+  .navigationBar .logo-img {
+      width: 80px;
+      height: auto;
+    }
+.hero {
+    background-image: url(../img/heroImage.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+}
+
+.hero img {
+   
+  width:250px;
+}
+.hero .problemSet {
+    padding-left: 230px;
+    padding-bottom: 30px;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    width: 900px;
+    
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 4rem;
+    color: #390101;
+}
+
+.hero-content h1 span{
+    font-family: "Poppins", sans-serif;
+    font-size: 4rem;
+    color: #e9497e;
+}
+
+.hero-content a{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+}
+
+.hero-buttons button {
+    font-family: "Poppins", sans-serif;
+    background-color: #ffcad4;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.featuresSection {
+    display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 90px;
+        width: 100vw;
+}
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    
+}
+
+.step {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    font-size: 1.7rem;
+    background-color: white;
+    width: 400px;
+    height: 150px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50px;
+    box-shadow: 0 2px 6px  #cd7a99;
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-3px);
+    border-color: #ffcad4;
+}
+
+.step .icon {
+    font-size: 100px;
+}
+
+.step span {
+    align-items: center;
+}
+
+.hero-image img {
+    width: 800px;
+    padding-left: 200px;
+    
+}
+.featuredCars {
+    background-image: url(../img/carsImage.png);
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: "Poppins", sans-serif;
+}
+/* Parallax Section */
+.parallax {
+    
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 91, 132);
+    font-size: 2em;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    
+    
+}
+.prodCategory {
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    margin-top: 125px;
+    letter-spacing: -1.2px;
+    text-align: center;
+    color: #e9497e;
+}
+
+/* Parallax Effect */
+.parallax::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Car Section */
+.car-section {
+    
+    padding: 50px 20px;
+    
+    width: 100vw;
+}
+
+/* Car Container */
+.car-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* Car Card */
+.car-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px #cd7a99;
+    padding: 20px;
+    text-align: center;
+    width: 390px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Car Card Hover Effect */
+.car-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Car Image */
+.car-card img {
+    align-items: center;
+    width: 350px;
+    height: 250px;
+    
+}
+
+/* Car Name */
+.car-card h3 {
+    margin: 10px 0;
+}
+
+/* Price */
+.price {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* View Car Button */
+.view-btn {
+    background: #e9497e;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 26px;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 2px 6px #cd7a99;
+}
+
+/* View All Cars Button */
+.view-all {
+    margin-top: 30px;
+}
+
+.view-all-btn {
+    background: #ffb4c1;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 26px;
+    cursor: pointer;
+    display: block;       /* Ensures the button is a block element */
+    margin-left: auto;    /* Centers the button horizontally */
+    margin-right: auto;   /* Centers the button horizontally */
+    text-align: center;
+    box-shadow: 0 4px 6px #cd7a99;
+    margin-bottom: 120px;
+    
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .car-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+  footer {
+    font-family: "Poppins";
+    background: #580320; /* Dark background */
+    color: white;
+    padding: 30px 0;
+    width: 100vw;
+}
+
+footer span {
+    color: #ed5d8d;
+}
+
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Ensures equal spacing */
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px; /* Ensures equal width for each section */
+    padding: 10px;
+    text-align: left; /* Aligns text to the left */
+}
+
+.footer-section h2,
+.footer-section h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color:#ed5d8d
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 18px;
+}
+
+.social-icons a:hover {
+    color: #ccc;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: left;
+    }
+}
