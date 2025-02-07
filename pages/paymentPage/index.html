@@ -1,69 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Rental Service</title>
-     <!--Icon Library-->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <script src="https://kit.fontawesome.com/b93004a0bd.js"></script>
+    <title>Car Rental Service - Payment</title>
+    <!--Icon Library-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b93004a0bd.js"></script>
 
-     <!-- Font -->
-     <link rel="preconnect" href="https://fonts.googleapis.com" />
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-       rel="stylesheet"/>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
 
     <!-- CDNJS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero">
         <header class="navigationBar">
             <div class="logo">
-              <img src="./assets/img/carRentalLogo.png" alt="" class="logo-img" />
+                <img src="./assets/img/carRentalLogo.png" alt="" class="logo-img" />
             </div>          
             <nav class="navigation">
-              <a href="../../index.html" class="navigation-content">Home</a>
-              <a href="../carsPage/index.html" class="navigation-content">Book Cars</a>
-              <a href="../contactPage/index.html" class="navigation-content">Contact Us</a>
+                <a href="../../index.html" class="navigation-content">Home</a>
+                <a href="../carsPage/index.html" class="navigation-content">Book Cars</a>
+                <a href="../contactPage/index.html" class="navigation-content">Contact Us</a>
             </nav>
-          </header>
-    <div class="payment-container">
-        <div class="car-details">
-            <img id="carImage" src="car-placeholder.jpg" alt="Selected Car">
-            <h2 id="carName">Car Model</h2>
-            <p id="carPrice">Price per day: $100</p>
-            <p id="rentalDuration">Rental Duration: 3 days</p>
-            <p id="totalPrice">Total Price: $300</p>
+        </header>
+
+        <div class="payment-container">
+            <div class="car-details">
+                <img id="carImage" src="car-placeholder.jpg" alt="Selected Car">
+                <h2 id="carName">Car Model</h2>
+                <p id="carPrice">Price per hour: </p>
+                <p id="rentalDuration">Rental Duration:</p>
+                <p id="pickupLocation">Pick-up Location:</p>
+                <p id="dropoffLocation">Drop-off Location:</p>
+                <p id="pickupDate">Pick-up Date:</p>
+                <p id="dropoffDate">Drop-off Date:</p>
+                <p id="totalPrice">Total Price:</p>
+            </div>
+
+            <div class="user-details">
+                <h2>User Information</h2>
+                <p id="userName">Name:</p>
+                <p id="userPhone">Phone:</p>
+                <p id="userEmail">Email:</p>
+            </div>
+
+            <div class="payment-options">
+                <h2>Select Payment Method</h2>
+                <button id="fullPaymentBtn">Pay Full Amount</button>
+                <button id="downPaymentBtn">Pay 50% Down Payment</button>
+            </div>
         </div>
 
-        <div class="payment-options">
-            <h2>Select Payment Method</h2>
-            <button onclick="processPayment('full')">Pay Full Amount</button>
-            <button onclick="processPayment('down')">Pay 50% Down Payment</button>
+        <div id="receiptPopup" class="popup" style="display: none;">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closeReceipt()">&times;</span>
+                <h2>Payment Successful</h2>
+                <p>Thank you for renting with us!</p>
+                <p>Car: <span id="receiptCarName"></span></p>
+                <p>Payment Method: <span id="receiptPaymentMethod"></span></p>
+                <p>Amount Paid: <span id="receiptAmount"></span></p>
+            </div>
         </div>
-    </div>
-
-    <div id="receiptPopup" class="popup">
-        <div class="popup-content">
-            <span class="close-btn" onclick="closeReceipt()">&times;</span>
-            <h2>Payment Successful</h2>
-            <p>Thank you for renting with us!</p>
-            <p>Car: <span id="receiptCarName"></span></p>
-            <p>Amount Paid: <span id="receiptAmount"></span></p>
-        </div>
-    </div>
-
     </section>
+
     <footer>
         <div class="footer-container">
             <div class="footer-section">
-                    
                 <h2>CAR RENTAL <span>SERVICES</span> </h2>
                 <p>We are a rental service provider</p>
             </div>
@@ -93,6 +102,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/paymentPage.js"></script> <!-- Link to the external JavaScript file -->
 </body>
 </html>
