@@ -1,0 +1,297 @@
+/* General Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navigationBar {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    padding: 0.5rem 9vw;
+    align-items: center;
+    background: linear-gradient(180deg, #ffb4c1, #ffdbec 1000%);
+    top: 0;
+    z-index: 10;
+    height: 80px;
+    box-shadow: 0 4px 6px #cd7a99;
+}
+
+.navigationBar .navigation {
+    display: flex;
+    align-items: center;
+    gap: -2rem;
+}
+
+.navigationBar .navigation-content {
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    display: inline-block;
+    transition: all 0.5s;
+}
+
+.navigationBar .navigation-content-active {
+    color: #e9497e;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    display: inline-block;
+    transition: all 0.5s;
+}
+
+.navigationBar .button {
+    border: 1px rgb(0, 0, 0) solid;
+    font-size: 0.9rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(45, 44, 44);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.navigationBar .navigation-content:hover {
+    color: #e9497e;
+    text-shadow: 0 0 9px #ffffff, 0 0 9px #ffffff, 0 0 9px #ffffff, 0 0 9px #ffffff;
+}
+
+.navigationBar .button:hover {
+    color: #000000;
+    background-color: #ffffff;
+    border: none;
+}
+
+.navigationBar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navigationBar .logo-img {
+    width: 80px;
+    height: auto;
+}
+
+/* Payment Container */
+.payment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 20px 40px;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Car Details */
+.car-details {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.car-details img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.car-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.car-details p {
+    font-size: 18px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Payment Options */
+.payment-options {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-options h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.payment-options button {
+    background: #ff007b;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.payment-options button:hover {
+    background: #a80453;
+}
+
+/* Payment Confirmation Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+}
+
+.popup-content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.popup-content button {
+    background: #ff007b;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.popup-content button:hover {
+    background: #a80453;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .payment-container {
+        padding: 120px 20px 40px;
+    }
+    
+    .car-details, .payment-options {
+        max-width: 90%;
+    }
+}
+
+
+
+/* Footer */
+footer {
+    font-family: "Poppins";
+    background: #580320; /* Dark background */
+    color: white;
+    padding: 30px 0;
+    width: 100vw;
+}
+
+footer span {
+    color: #ed5d8d;
+}
+
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Ensures equal spacing */
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px; /* Ensures equal width for each section */
+    padding: 10px;
+    text-align: left; /* Aligns text to the left */
+}
+
+.footer-section h2,
+.footer-section h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color:#ed5d8d
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 18px;
+}
+
+.social-icons a:hover {
+    color: #ccc;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: left;
+    }
+}
