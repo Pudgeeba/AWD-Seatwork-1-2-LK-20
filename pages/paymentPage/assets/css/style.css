@@ -162,6 +162,10 @@ body {
     background: #a80453;
 }
 
+.payment-options button.selected {
+    background-color: #a80453; /* Change to your desired color */
+    color: white;
+}
 /* Payment Confirmation Popup */
 .popup {
     display: none;
@@ -220,7 +224,7 @@ body {
 /* Footer */
 footer {
     font-family: "Poppins";
-    background: #580320; /* Dark background */
+    background: #580320;
     color: white;
     padding: 30px 0;
     width: 100vw;
@@ -232,7 +236,7 @@ footer span {
 
 .footer-container {
     display: flex;
-    justify-content: space-between; /* Ensures equal spacing */
+    justify-content: space-between;
     max-width: 1100px;
     margin: auto;
     flex-wrap: wrap;
@@ -240,9 +244,9 @@ footer span {
 
 .footer-section {
     flex: 1;
-    min-width: 250px; /* Ensures equal width for each section */
+    min-width: 250px;
     padding: 10px;
-    text-align: left; /* Aligns text to the left */
+    text-align: left;
 }
 
 .footer-section h2,
@@ -272,7 +276,7 @@ footer span {
 }
 
 .footer-section ul li a:hover {
-    color:#ed5d8d
+    color: #ed5d8d;
 }
 
 .social-icons {
@@ -297,3 +301,4 @@ footer span {
         text-align: left;
     }
 }
+
