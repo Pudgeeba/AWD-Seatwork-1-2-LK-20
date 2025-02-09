@@ -209,10 +209,12 @@ body {
 
 /* Heading */
 .rental-details h2 {
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: 700;
     margin-bottom: 30px;
-    color: #333;
+    background: linear-gradient(to left,#e9497e, #fff588);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
 
 /* Flexbox for Horizontal Layout */
@@ -238,7 +240,9 @@ body {
 .rental-details label {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #444;
+    background:#e9497e;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
     margin-bottom: 8px;
     text-align: left;
     width: 100%;

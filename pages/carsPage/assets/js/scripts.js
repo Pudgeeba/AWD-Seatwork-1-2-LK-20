@@ -61,11 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Rent car button functionality
     rentCarButton.addEventListener('click', function() {
         if (selectedCar) {
-            // Get user information
-            const userName = document.getElementById('user-name').value;
-            const userPhone = document.getElementById('user-phone').value;
-            const userEmail = document.getElementById('user-email').value;
-
             // Store selected car information in local storage
             const carBrand = selectedCar.getAttribute('data-brand');
             const carSeats = selectedCar.getAttribute('data-seats');
@@ -80,16 +75,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 transmission: carTransmission,
                 image: carImage,
                 price: carPrice,
-                user: {
-                    name: userName,
-                    phone: userPhone,
-                    email: userEmail
-                },
                 status: 'available' // Initially available
             };
 
             // Save to local storage
             localStorage.setItem('selectedCar', JSON.stringify(rentalDetails));
+            console.log('Selected Car stored in local storage:', localStorage.getItem('selectedCar'));
 
             // Proceed to payment page
             window.location.href = '../paymentPage/index.html'; // Change to your payment page URL
