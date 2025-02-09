@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterBtn = document.getElementById('filterBtn');
     const carCards = document.querySelectorAll('.car-card');
     const rentCarButton = document.getElementById('rentCarButton');
-
     let selectedCar = null;
 
     // Enable or disable Rent Car button based on selected car
@@ -43,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (carStatus === 'available') {
                 // Deselect previously selected car
                 if (selectedCar) {
-                    selectedCar.classList.remove('selected');
+                    selectedCar.classList.remove(' selected');
                     selectedCar.querySelector('.select-car-btn').innerText = 'Select';
                 }
 
@@ -86,4 +85,22 @@ document.addEventListener('DOMContentLoaded', function() {
             window.location.href = '../paymentPage/index.html'; // Change to your payment page URL
         }
     });
+
+    // Update car status in UI based on local storage
+    const storedCar = JSON.parse(localStorage.getItem('selectedCar'));
+    if (storedCar) {
+        updateCarStatusInUI(storedCar.brand); // Update the car status in the UI
+    }
 });
+
+// Function to update the car status in the UI
+function updateCarStatusInUI(carBrand) {
+    const carCards = document.querySelectorAll('.car-card');
+    carCards.forEach(card => {
+        const brand = card.getAttribute('data-brand');
+        if (brand === carBrand) {
+            card.querySelector('.rental-status').innerText = 'Status: Rented Out'; // Update the status text
+            card.setAttribute('data-status', 'rented'); // Update the data-status attribute
+        }
+    });
+}
