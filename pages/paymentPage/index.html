@@ -20,45 +20,48 @@
                 <a href="../contactPage/index.html" class="navigation-content">Contact Us</a>
             </nav>
         </header>
-
+        
+        <main class="payment-main">
         <div class="payment-container">
             <div class="car-details">
-                <img id="carImage" src="car-placeholder.jpg" alt="Selected Car">
-                <h2 id="carName">Car Model</h2>
-                <p id="carPrice">Price per hour: </p>
-                <p id="rentalDuration">Rental Duration:</p>
-                <p id="pickupLocation">Pick-up Location:</p>
-                <p id="dropoffLocation">Drop-off Location:</p>
-                <p id="pickupDate">Pick-up Date:</p>
-                <p id="dropoffDate">Drop-off Date:</p>
-                <p id="totalPrice">Total Price:</p>
+                <p id="totalPriceDisplay">Total Amount to Pay </p>
+                <span id="totalPrice">₱ 0.00</span>
             </div>
-
+            
             <div class="user-details">
                 <h2>User Information</h2>
-                <p id="userName">Name:</p>
-                <p id="userPhone">Phone:</p>
-                <p id="userEmail">Email:</p>
+                <div class="form-group">
+                    <label for="userNameInput">Name:</label>
+                    <input type="text" id="userNameInput" placeholder="Enter your name" />
+                </div>
+                <div class="form-group">
+                    <label for="userPhoneInput">Phone:</label>
+                    <input type="tel" id="userPhoneInput" placeholder="Enter your phone number" />
+                </div>
+                <div class="form-group">
+                    <label for="userEmailInput">Email:</label>
+                    <input type="email" id="userEmailInput" placeholder="Enter your email" />
+                </div>
             </div>
-
+            
             <div class="payment-options">
                 <h2>Select Payment Method</h2>
                 <button id="fullPaymentBtn">Pay Full Amount</button>
                 <button id="downPaymentBtn">Pay 50% Down Payment</button>
             </div>
-        </div>
-
-        <div id="receiptPopup" class="popup" style="display: none;">
-            <div class="popup-content">
-                <span class="close-btn" onclick="closeReceipt()">&times;</span>
-                <h2>Payment Successful</h2>
-                <p>Thank you for renting with us!</p>
-                <p>Car: <span id="receiptCarName"></span></p>
-                <p>Payment Method: <span id="receiptPaymentMethod"></span></p>
-                <p>Amount Paid: <span id="receiptAmount"></span></p>
+            
+            <div id="receiptPopup" class="popup" style="display: none;">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closeReceipt()">&times;</span>
+                    <h2>Payment Successful</h2>
+                    <p>Thank you for renting with us!</p>
+                    <p>Car: <span id="receiptCarName"></span></p>
+                    <p>Payment Method: <span id="receiptPaymentMethod"></span></p>
+                    <p>Amount Paid: <span id="receiptAmount"></span></p>
+                </div>
             </div>
-        </div>
     </section>
+</main>
 
     <footer>
         <div class="footer-container">

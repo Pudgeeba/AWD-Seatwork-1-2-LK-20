@@ -89,7 +89,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 100px 20px 40px;
+    padding: 50px 20px 40px;
     max-width: 900px;
     margin: auto;
     text-align: center;
@@ -121,9 +121,17 @@ body {
 
 /* Make labels bold */
 .car-details p {
-    font-size: 18px;
+    font-size: 28px;
     color: #555;
     margin: 5px 0;
+    font-weight: bold;
+}
+
+.car-details span {
+    font-size: 48px;
+    color: #75c800;
+    margin: 5px 0;
+    font-weight: bold;
 }
 
 .car-details p strong {
@@ -132,7 +140,7 @@ body {
 
 /* Payment Options */
 .payment-options {
-    background: #f8f9fa;
+
     padding: 20px;
     border-radius: 10px;
     width: 100%;
@@ -142,12 +150,14 @@ body {
 }
 
 .payment-options h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #e9497e;
 }
 
 .payment-options button {
-    background: #ff007b;
+    background:#e9497e;
     color: white;
     padding: 12px;
     border: none;
@@ -302,3 +312,62 @@ footer span {
     }
 }
 
+/* User Information Section */
+.user-details {
+    font-family: "Poppins";
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 600px; /* Adjust max-width as needed */
+}
+
+/* Heading */
+.user-details h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ff007b;
+}
+
+/* Form Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start */
+    margin-bottom: 20px; /* Space between form groups */
+    width: 100%;
+}
+
+/* Labels */
+.user-details label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ff007b;
+    margin-bottom: 8px;
+    text-align: left;
+    width: 100%; /* Full width for label */
+}
+
+/* Input Fields */
+.user-details input {
+    padding: 15px;
+    font-size: 1.1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 565px; /* Match input field max-width */
+}
+.payment-main{
+
+    text-align: center;
+    background: linear-gradient(180deg, #ffffff, #f2f2f2);
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/carsImage..png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

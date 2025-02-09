@@ -10,20 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Display car details
         document.getElementById('carName').innerText = selectedCar.brand;
         document.getElementById('carImage').src = selectedCar.image || 'car-placeholder.jpg'; // Use a placeholder if no image is provided
-        document.getElementById('carPriceValue').innerText = selectedCar.price; // Show price
-        document.getElementById('rentalDurationValue').innerText = `${selectedCar.duration} hours`; // Show rental duration
-        document.getElementById('pickupLocationValue').innerText = pickupLocation; // Show pickup location
-        document.getElementById('dropoffLocationValue').innerText = dropoffLocation; // Show dropoff location
-        document.getElementById('pickupDateValue').innerText = pickupDate; // Show pickup date
-        document.getElementById('dropoffDateValue').innerText = dropoffDate; // Show dropoff date
-        document.getElementById('totalPriceValue').innerText = selectedCar.price * selectedCar.duration; // Show total price
-    }
+        document.getElementById('totalPrice').innerText = `₱ ${selectedCar.price}`; // Show total price (assuming price is per day)
 
-    // Display user information
-    const userInfo = selectedCar.user; // Assuming user info is stored in the selectedCar object
-    document.getElementById('userNameValue').innerText = userInfo.name; // Show user name
-    document.getElementById('userPhoneValue').innerText = userInfo.phone; // Show user phone
-    document.getElementById('userEmailValue').innerText = userInfo.email; // Show user email
+        // Display user information
+        const userInfo = selectedCar.user; // Assuming user info is stored in the selectedCar object
+        document.getElementById('userNameValue').innerText = userInfo.name; // Show user name
+        document.getElementById('userPhoneValue').innerText = userInfo.phone; // Show user phone
+        document.getElementById('userEmailValue').innerText = userInfo.email; // Show user email
+    }
 
     // Confirm payment button functionality
     document.getElementById('fullPaymentBtn').addEventListener('click', function() {
@@ -37,8 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function processPayment(type) {
     const selectedCar = JSON.parse(localStorage.getItem('selectedCar'));
-    const rentalDuration = selectedCar.duration; // Assuming duration is in hours
-    const amountPaid = type === 'full' ? selectedCar.price * rentalDuration : (selectedCar.price * rentalDuration) / 2;
+    const amountPaid = type === 'full' ? selectedCar.price : (selectedCar.price / 2); // Assuming price is per day
 
     // Update the receipt
     document.getElementById('receiptCarName').innerText = selectedCar.brand;
