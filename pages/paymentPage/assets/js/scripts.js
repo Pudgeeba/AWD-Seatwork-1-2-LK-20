@@ -1,16 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Retrieve selected car information from local storage
     const selectedCar = JSON.parse(localStorage.getItem('selectedCar'));
-    const pickupDate = new URLSearchParams(window.location.search).get('pickup-date');
-    const dropoffDate = new URLSearchParams(window.location.search).get('dropoff-date');
-    const pickupLocation = new URLSearchParams(window.location.search).get('pickup-location');
-    const dropoffLocation = new URLSearchParams(window.location.search).get('dropoff-location');
 
     if (selectedCar) {
-        // Display car details
-        document.getElementById('carName').innerText = selectedCar.brand;
-        document.getElementById('carImage').src = selectedCar.image || 'car-placeholder.jpg'; // Use a placeholder if no image is provided
-        document.getElementById('totalPrice').innerText = `₱ ${selectedCar.price}`; // Show total price (assuming price is per day)
+        // Display the total price
+        document.getElementById('totalPrice').innerText = `₱ ${selectedCar.price}`; // Show total price
 
         // Display user information
         const userInfo = selectedCar.user; // Assuming user info is stored in the selectedCar object
@@ -21,41 +15,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Confirm payment button functionality
     document.getElementById('fullPaymentBtn').addEventListener('click', function() {
-        processPayment('full');
+        showConfirmation('full');
     });
 
     document.getElementById('downPaymentBtn').addEventListener('click', function() {
-        processPayment('down');
+        showConfirmation('down');
     });
 });
 
-function processPayment(type) {
+function showConfirmation(type) {
     const selectedCar = JSON.parse(localStorage.getItem('selectedCar'));
-    const amountPaid = type === 'full' ? selectedCar.price : (selectedCar.price / 2); // Assuming price is per day
+    const amountPaid = type === 'full' ? selectedCar.price : (selectedCar.price / 2); // Calculate amount to be paid
+
+    // Set up confirmation popup
+    document.getElementById('confirmationPopup').style.display = 'block';
+
+    // Handle confirmation buttons
+    document.getElementById('confirmYesBtn').onclick = function() {
+        processPayment(type, amountPaid);
+        closeConfirmation();
+    };
+
+    document.getElementById('confirmNoBtn').onclick = function() {
+        closeConfirmation();
+    };
+}
+
+function closeConfirmation() {
+    document.getElementById('confirmationPopup').style.display = 'none';
+}
+
+function processPayment(type, amountPaid) {
+    const selectedCar = JSON.parse(localStorage.getItem('selectedCar'));
 
     // Update the receipt
-    document.getElementById('receiptCarName').innerText = selectedCar.brand;
-    document.getElementById('receiptPaymentMethod').innerText = type === 'full' ? 'Full Payment' : '50% Down Payment';
-    document.getElementById('receiptAmount').innerText = `₱ ${amountPaid}`;
+    document.getElementById('receiptCarName').innerText = selectedCar.brand; // Show car name
+    document.getElementById('receiptPaymentMethod').innerText = type === 'full' ? 'Full Payment' : '50% Down Payment'; // Show payment method
+    document.getElementById('receiptAmount').innerText = `₱ ${amountPaid}`; // Show amount paid
 
     // Update the car status in local storage
-    selectedCar.status = 'rented';
+    selectedCar.status = 'rented'; // Change status to rented
     localStorage.setItem('selectedCar', JSON.stringify(selectedCar));
 
     // Show the receipt popup
     document.getElementById('receiptPopup').style.display = 'block';
-
-    // Change button color
-    const fullPaymentBtn = document.getElementById('fullPaymentBtn');
-    const downPaymentBtn = document.getElementById('downPaymentBtn');
-
-    if (type === 'full') {
-        fullPaymentBtn.classList.add('selected');
-        downPaymentBtn.classList.remove('selected');
-    } else {
-        downPaymentBtn.classList.add('selected');
-        fullPaymentBtn.classList.remove('selected');
-    }
 }
 
 function closeReceipt() {
