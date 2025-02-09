@@ -9,6 +9,19 @@ body {
     align-items: center;
 }
 
+.hero {
+    background-image: url(../img/heroImage.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+}
+
 .navigationBar {
     display: flex;
     width: 100vw;
@@ -323,6 +336,7 @@ body {
 
 /* Filter Panel Heading */
 .filter-panel h3 {
+    color:#ff007b;
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
